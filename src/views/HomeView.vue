@@ -7,7 +7,7 @@
 
         <ul v-for="product in products" :key="product.id">
             <li class="product-item">
-                <img :src="`src/assets/Imagenes/product-${product.id}-${product.name.replace(' ', '-')}.webp`" alt="Imagen del producto" />
+                <img :src="`src/assets/Imagenes/product-${product.id}-${product.name.replace(' ')}.webp`" alt="Imagen del producto" />
 
                 <div class="product-info">
                     <span>
@@ -29,7 +29,7 @@
 
         <ul v-for="item in cart" :key="item.product.id">
             <li class="cart-item">
-                <img :src="`src/assets/Imagenes/product-${item.product.id}-${item.product.name.replace(' ', '-')}.webp`" alt="Imagen del producto" />
+                <img :src="`src/assets/Imagenes/product-${item.product.id}-${item.product.name.replace(' ')}.webp`" alt="Imagen del producto" />
 
                 <div class="cart-info">
                     <span>
