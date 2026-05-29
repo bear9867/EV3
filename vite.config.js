@@ -10,7 +10,7 @@ export default defineConfig({
     vueDevTools(),
   ],
 
-  base: 'https://bear9867.github.io/EV3/',
+  base: 'https://bear9867.github.io/EV3',
 
   resolve: {
     alias: {
