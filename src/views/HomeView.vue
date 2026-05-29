@@ -7,8 +7,7 @@
 
         <ul v-for="product in products" :key="product.id">
             <li class="product-item">
-                <img :src="`src/assets/Imagenes/product-${product.id}-${product.name.replace(' ', '-')}.webp`" alt="Imagen del producto" />
-
+                <img :src="product.image" alt="Imagen del producto" />
                 <div class="product-info">
                     <span>
                         {{ product.name }} - Precio $: {{FormatoPeso(product.price)}} - Stock: {{ product.stock }}
@@ -29,7 +28,7 @@
 
         <ul v-for="item in cart" :key="item.product.id">
             <li class="cart-item">
-                <img :src="`src/assets/Imagenes/product-${item.product.id}-${item.product.name.replace(' ', '-')}.webp`" alt="Imagen del producto" />
+                <img :src="item.product.image" alt="Imagen del producto" />
                 
                 <div class="cart-info">
                     <span>
@@ -65,17 +64,27 @@
     import iCarrito from "@/assets/Imagenes/iCarrito.png";
     import iBasura from "@/assets/Imagenes/iBasura.png";
     import iTodaBasura from "@/assets/Imagenes/iTodaBasura.png";
+    import audifonos from '@/assets/Imagenes/product-1-Audifonos.webp';
+    import mouse from '@/assets/Imagenes/product-2-Mouse.webp';
+    import teclado from '@/assets/Imagenes/product-3-Teclado.webp';
+    import gabinete from '@/assets/Imagenes/product-4-Gabinete.webp';   
+    import pantalla from '@/assets/Imagenes/product-5-Pantalla.webp';
+    import silla from '@/assets/Imagenes/product-6-Silla.webp';
+
 
     export default {
         data() {
             return {
+                iCarrito,
+                iBasura,
+                iTodaBasura,
                 products: [
-                    {id: 1, name: 'Audifonos', price: 30000, stock: 3 },
-                    {id: 2, name: 'Mouse', price: 20000, stock: 5},
-                    {id: 3, name: 'Teclado', price: 15000, stock: 10},
-                    {id: 4, name: 'Gabinete', price: 35000, stock: 4},
-                    {id: 5, name: 'Pantalla', price: 175000, stock: 3},
-                    {id: 6, name: 'Silla', price: 150000, stock: 2}
+                    { id: 1, name: 'Audifonos', price: 30000, stock: 3, image: audifonos },
+                    { id: 2, name: 'Mouse', price: 20000, stock: 5, image: mouse },
+                    { id: 3, name: 'Teclado', price: 15000, stock: 10, image: teclado },
+                    { id: 4, name: 'Gabinete', price: 35000, stock: 4, image: gabinete },
+                    { id: 5, name: 'Pantalla', price: 175000, stock: 3, image: pantalla },
+                    { id: 6, name: 'Silla', price: 150000, stock: 2, image: silla }
                 ],
                 cart: []
             };
