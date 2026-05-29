@@ -7,7 +7,7 @@
 
         <ul v-for="product in products" :key="product.id">
             <li class="product-item">
-                <img :src="`/public/Imagenes/product-${product.id}-${product.name.replace(' ', '-')}.webp`" alt="Imagen del producto" />
+                <img :src="`src/assets/Imagenes/product-${product.id}-${product.name.replace(' ', '-')}.webp`" alt="Imagen del producto" />
 
                 <div class="product-info">
                     <span>
@@ -15,7 +15,7 @@
                     </span>
 
                     <button @click="addToCart(product)" class="add-to-cart-btn">
-                        <img src="/public/Imagenes/iCarrito.png" class="button-icon" alt="Carrito">
+                        <img :src="iCarrito" class="button-icon" alt="Carrito">
                         Agregar al carrito
                     </button>
                 </div>
@@ -29,14 +29,14 @@
 
         <ul v-for="item in cart" :key="item.product.id">
             <li class="cart-item">
-                <img :src="`/public/Imagenes/product-${item.product.id}-${item.product.name.replace(' ', '-')}.webp`" alt="Imagen del producto" />
+                <img :src="`src/assets/Imagenes/product-${item.product.id}-${item.product.name.replace(' ', '-')}.webp`" alt="Imagen del producto" />
                 
                 <div class="cart-info">
                     <span>
                         {{ item.product.name }}-Cantidad: {{ item.quantity }}
                     </span>
                     <button @click="removeFromCart(item)" class="remove-from-cart-btn">
-                        <img src="/public/Imagenes/iBasura.png" class="button-icon" alt="Basurero">
+                        <img :src="iBasura" class="button-icon" alt="Basurero">
                         Remover del carrito
                     </button>
                 </div>
@@ -46,7 +46,7 @@
         <br>
 
         <button v-if="cart.length > 0" @click="removeAllCart" class="remove-from-cart-btn">
-            <img src="/public/Imagenes/iTodaBasura.png" class="button-iconBasuraTotal" alt="CamionBasurero">
+            <img :src="iTodaBasura" class="button-iconBasuraTotal" alt="CamionBasurero">
             Vaciar carrito
         </button>
         <p v-else class="empty-cart-message">
@@ -62,6 +62,10 @@
 </template>
 
 <script>
+    import iCarrito from "@/assets/Imagenes/iCarrito.png";
+    import iBasura from "@/assets/Imagenes/iBasura.png";
+    import iTodaBasura from "@/assets/Imagenes/iTodaBasura.png";
+
     export default {
         data() {
             return {
