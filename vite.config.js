@@ -11,9 +11,7 @@ export default defineConfig({
     vueDevTools(),
   ],
 <<<<<<< HEAD
-
-=======
->>>>>>> ae21712 (Version final 3)
+>>>>>>> ae21712 (Version final 4)
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
